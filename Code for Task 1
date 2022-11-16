@@ -23,4 +23,4 @@ insert into shopping_history values
   
   select distinct(product) from shopping_history;
   
-  select product,sum(quantity*unit_price) as total from shopping_history group by product order by total desc, product;
+  select product,sum(quantity*unit_price) as total_price from shopping_history group by product order by total_price desc, product;
