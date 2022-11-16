@@ -1,0 +1,26 @@
+create database sql_proj1;
+use database sql_proj1;
+
+create table shopping_history(
+product varchar NOT NULL,
+quantity integer NOT NULL,
+unit_price integer NOT NULL
+);
+
+insert into shopping_history values
+  ('bread',10,15),
+  ('butter',2,30),
+  ('cheese',5,50),
+  ('milk',5,80),
+  ('butter',5,70),
+  ('milk',8,90),
+  ('bread',15,55),
+  ('butter',22,300),
+  ('cheese',45,550),
+  ('milk',25,85);
+  
+  select * from shopping_history;
+  
+  select distinct(product) from shopping_history;
+  
+  select product,sum(quantity*unit_price) as total from shopping_history group by product order by total desc, product;
