@@ -1,0 +1,32 @@
+If client is providing AWS data go to line 16
+
+If one wants to practice themselves
+- Create AWS account(2rs will be deducted from CC and will be refunded in 7 days)
+- log in using root user
+- search S3(Scalable Storage in CLoud)
+- click on S3 and than on Create Bucket
+- give meaningful name of bucket and no additional settings are required.
+- bucket will be created and click on the bucket name and you will be redirected to next page to uploaf file
+- upload file from local system and once it is uploaded click on 'Close'
+- now select the box for the bucket you have created
+- you will get option of Copy S3 url
+- to know AWS Key ID and AWS Secret Key click on top right corner where your name is mentioned --> Security Credentials
+- access keys --> create new access key from here you will get ID and secret key.
+
+Open Snowflake
+Click on 'Stages'
+Create
+In name --> provide meaningful name
+client will provide url of S3, AWS Key ID and AWS Secret Key
+
+To check if file has been uploaded successfully write following command in snowflake
+list @(name provided during the create stage);
+
+How to enter data
+Copy Into <table-name>
+From @(name provided during the create stage)
+File_Format = (Type = CSV Field_Delimiter=',' Skip_Header = 1)
+Purge = TRUE;
+
+To check the data from table
+select * from <table-name>
